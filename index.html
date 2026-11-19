@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#19191b"><title>如果我能自由翱翔 · 现实 RPG 模拟器</title>
+<link rel="stylesheet" href="./assets/studio.css">
+<link id="source-background" rel="preload" as="image" href="./assets/sunset.jpg">
+<link id="source-sound" rel="preload" as="fetch" type="audio/mp4" crossorigin href="./assets/flight-audio.m4a"></head><body>
+<main><header><span class="series"><i class="sun-icon" aria-hidden="true"></i>现实 RPG 模拟器</span><span class="format">9:16 · 5 秒</span></header>
+<h1>如果我能自由翱翔</h1>
+<div class="workspace"><figure class="viewer"><div class="film"><canvas id="preview" width="1080" height="1920" aria-label="飞向太阳的竖屏预览"></canvas></div><figcaption class="scrubber"><span class="readout" id="clk">0:00</span><input id="scrub" type="range" min="0" max="1000" step="1" value="0" aria-label="预览进度"><span class="readout">0:05</span></figcaption></figure>
+<section class="controls" aria-label="飞行编辑器"><h2 class="section-title">搭配你的飞行</h2>
+<div class="slots" aria-label="选择要更换的素材">
+<button type="button" class="slot" data-slot="background" aria-pressed="true"><img id="thumb-background" alt=""><span class="name">背景</span></button>
+<button type="button" class="slot" data-slot="cat" aria-pressed="false"><canvas id="thumb-cat" width="238" height="116" aria-hidden="true"></canvas><span class="name">主角</span></button>
+<button type="button" class="slot" data-slot="wings" aria-pressed="false"><span class="wing-default" id="wingDefault" aria-hidden="true"><svg viewBox="0 0 58 42"><path d="M5 34C11 28 18 24 24 18C34 15 44 9 53 4C49 14 43 22 34 27C38 27 42 26 46 24C39 32 32 34 25 35C28 36 31 36 33 36C23 42 10 40 5 34Z" fill="#e4f2dd" stroke="#9cbab0" stroke-width="1.8"/><path d="M10 33Q28 30 44 14" fill="none" stroke="#a7c2b8"/></svg></span><img hidden id="thumb-wings" alt=""><span class="name">翅膀</span></button></div>
+<div class="actor-modes" id="actorModes" role="group" aria-label="主角样式" hidden><button id="mode-stick" type="button" aria-pressed="true">火柴人背影</button><button id="mode-empty" type="button" aria-pressed="false">仅翅膀</button><button id="mode-photo" type="button" aria-pressed="false">选照片</button></div>
+<div class="uploadbar"><span class="filename" id="assetName"></span><div class="edit-buttons"><button class="text-btn" id="replace" type="button">更换图片</button><button class="text-btn reset" id="restore" type="button">恢复默认</button></div><input type="file" id="load" accept="image/*"></div>
+<div id="mapArea"><div class="field-label"><strong>飞向哪里</strong><span>在原图上点选太阳</span></div><div id="map" tabindex="0" role="group" aria-label="飞行终点，用方向键微调"><img id="source" alt="点选太阳所在位置"><i id="cross"></i></div></div>
+<p id="assetHelp" hidden></p>
+<div class="speed"><label class="field-label" for="meter"><strong>前景推进</strong><output id="val">67%</output></label><input id="meter" type="range" min="0" max="100" value="67"></div>
+<div class="buttons"><button type="button" id="play" class="action primary">出发</button><button type="button" id="save" class="action">导出视频</button></div>
+<div id="result" hidden><a id="download">保存视频</a><button id="share" type="button" hidden>分享视频</button></div><div class="statusline"><p id="state" role="status" aria-live="polite"></p><a id="credit" href="https://commons.wikimedia.org/wiki/File:Oceanside_Pier_Sunset.jpg" target="_blank" rel="noopener">示例摄影 · JAFactsDude</a></div>
+</section></div></main>
+<script src="./assets/flight.js"></script><script src="./assets/studio.js"></script></body></html>
